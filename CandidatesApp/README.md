@@ -70,7 +70,9 @@ We need to create two tables in our SQL Database for storing the data for our Ap
 	  TS TIMESTAMP  
 	);
 	```
-* You can see two new tables showing up in the left panel. We are done with our work here. Lets jump to the interesting Node-RED part now!	
+* You can see two new tables showing up in the left panel. 
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/created_tables_sqldb.bmp)  
+We are done with our work here. Lets jump to the interesting Node-RED part now!	
 
 #### The Node-RED flow
 
