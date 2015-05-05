@@ -64,7 +64,7 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
 
 #### Section A. Flow incoming "Hillary Clinton" tweets from twitter and analyze their sentiment
 
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.bmp)
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.png)
 
 #### Section B. Write the tweets and sentiment scores to a SQLDB database
 #### Section C. Create REST API to show sentiment spread
