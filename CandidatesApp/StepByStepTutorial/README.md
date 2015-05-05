@@ -70,7 +70,7 @@ the icon next to it. When prompted, enter your Twitter credentials.  You can lea
 can change this to any other search term that you would like to analyze the sentiment score for.
 
 Double click on the Twitter node  and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.png)  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.bmp)  
 
 Next, drag the sentiment node under Analysis onto the canvas and place it to the right of the twitter node.  Using the bubble icon on the right of the twitter node, you can connect 
 it to the sentiment node by drawing a line to connect the two nodes. 
@@ -82,7 +82,7 @@ Now, you are ready to deploy your flow and see some of the output.  To do this, 
 
 In the right pane, select the debug tab. 
 
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.bmp)
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.png)
 
 #### Section B. Write the tweets and sentiment scores to a SQLDB database
 #### Section C. Create REST API to show sentiment spread
