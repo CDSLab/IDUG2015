@@ -33,7 +33,8 @@ What you see here is the list of your *Applications* and *Services* in Bluemix. 
 * Search for SQL Database in the search tab or select the **SQL Database** service in the Data Management section.
 * In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Free plan. Click **CREATE**.   
 * The App would be required to **RESTAGE**. Your SQLDB service is now bound with the Node-RED App and it should show up on the App Overview page.  
-* For authentication purposes for the SQLDB service further on, you would require the username and password at several places. This can found by clicking on the **Show Credentials** text on the left bottom part of the SQL Database block. In the textbox that shows up, make a note of the **username** and **password** among the various attributes. You can always refer back to this whenever required.  
+* For authentication purposes for the SQLDB service further on, you would require the username and password at several places. This can found by clicking on the **Show Credentials** text on the left bottom part of the SQL Database block. In the textbox that shows up, make a note of the **username** and **password** among the various attributes. You can always refer back to this whenever required.   
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/show_credentials.bmp) 
 
 ####We are done with the setup of the Node-RED app and the SQLDB service. That was pretty easy.
 
@@ -85,6 +86,7 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/%245A2C55CE3129CFC8.bmp)
  and select **Import** > **Clipboard**  
 * In the textbox, paste the content of the file **CandidatesApp_Import_Sheet1.txt** in the folder **node-RED import files** of this project. Click **Ok**  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/node_flow.bmp)
 
 * ####Set the Twitter credentials  
 Double click on the blue Twitter node "Hillary Clinton" and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
@@ -103,7 +105,8 @@ Repeat the same process for the other Twitter node "Jeb Bush".
 
 * Open a new tab. Log on to **"Your App name".mybluemix.net/bar?q=bush**
 * You can view the Bar graph of the Sentiment Spread of tweets about Jeb Bush. Click on any of the bar and you can view the tweets pertaining to that Sentiment rank.
-* Try the same with **"Your App name".mybluemix.net/bar?q=clinton**
+* Try the same with **"Your App name".mybluemix.net/bar?q=clinton**  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/bar_chart_bush.bmp)
 
 # Within a few minutes, you have a Sentiment Graph about the Candidates for US elections based on the live Twitter feed!!!
 
