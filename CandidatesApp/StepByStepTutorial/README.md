@@ -64,7 +64,25 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
 
 #### Section A. Flow incoming "Hillary Clinton" tweets from twitter and analyze their sentiment
 
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.png)
+In the left-hand pane under "social", you will find a Twitter node.  This node can be used, together with your Twitter account, to feed live tweets as msg objects into the Node Red flow.  
+But first you will need to configure this node with your Twitter credentials. To do this, double click the node and you will enter its configuration panel. Setup the "Login as" using
+the icon next to it. When prompted, enter your Twitter credentials.  You can leave the search field as "All public tweets", and add "Hillary Clinton" under the "for". Optionally, you
+can change this to any other search term that you would like to analyze the sentiment score for.
+
+Double click on the Twitter node  and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.png)  
+
+Next, drag the sentiment node under Analysis onto the canvas and place it to the right of the twitter node.  Using the bubble icon on the right of the twitter node, you can connect 
+it to the sentiment node by drawing a line to connect the two nodes. 
+
+Finally, we need a way to view the output.  The debug node is very handy for this.  Find the debug node in the left pane under "output" and drag it to the right of the sentiment node
+and connect it. 
+
+Now, you are ready to deploy your flow and see some of the output.  To do this, click on the red "Deploy" button in the upper-right part of the screen.  
+
+In the right pane, select the debug tab. 
+
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/StepByStepTutorial/images/tutorial1.bmp)
 
 #### Section B. Write the tweets and sentiment scores to a SQLDB database
 #### Section C. Create REST API to show sentiment spread
@@ -85,18 +103,6 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
  and select **Import** > **Clipboard**  
 * In the textbox, paste the content of the file **CandidatesApp_Import_Sheet1.txt** in the folder **node-RED import files** of this project. Click **Ok**  
 
-* ####Set the Twitter credentials  
-Double click on the blue Twitter node "Hillary Clinton" and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.bmp)  
-Repeat the same process for the other Twitter node "Jeb Bush".
-
-
-* This imports the ready-to-use flow structure that you can use for this app. On the top right, click **Deploy**.  
-* In the **debug** panel on the right, you would start seeing the live tweets that are going to be saved in the SQLDB tables that we set up before. 
-* Go back to the SQLDB console and validate the records being inserted into the tables we created.  
-* Now, click the icon on the top right corner of the middle panel to create a new sheet in the flow editor.
-* From the **Import** > **Clipboard** textbox as earlier, import the contents of the file **CandidatesApp_Import_Sheet2.txt**.
-* Click **Deploy**
 
 ### We have created the Node-RED flow required for the App. Time to see the results. 
 
