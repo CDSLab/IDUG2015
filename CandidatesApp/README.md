@@ -84,7 +84,11 @@ We need to create two tables in our SQL Database for storing the data for our Ap
  and select **Import** > **Clipboard**  
 * In the textbox, paste the content of the file **CandidatesApp_Import_Sheet1.txt** in the folder **node-RED import files** of this project. Click **Ok**  
 
-* ####Set the Twitter credentials
+* ####Set the Twitter credentials  
+Double click on the blue Twitter node "Hillary Clinton" and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.bmp)  
+Repeat the same process for the other Twitter node "Jeb Bush".
+
 
 * This imports the ready-to-use flow structure that you can use for this app. On the top right, click **Deploy**.  
 * In the **debug** panel on the right, you would start seeing the live tweets that are going to be saved in the SQLDB tables that we set up before. 
