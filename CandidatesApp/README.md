@@ -8,6 +8,13 @@ This will take care of your _Sign Up_ and _Log In_ into the Bluemix portal.
 ### What is our App?
 We want to try to figure out the popularity of the Candidates - "Hillary Clinton" and "Jeb Bush", based on the sentiments of the *live* tweets concerning them. All this with minimal _(almost none)_ code and with a drag-drop flow diagram feature that is up and running within minutes.  
 
+Here is a screenshot of the app that you will be making and hosting on the cloud, powered by the SQLDB cloud database:
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/bar_chart_bush.bmp)
+Your results will look different, as this is based on live twitter data. You can see that on the particular day when this screenshot was taken, tweets about Jeb Bush were trending negative.
+
+In this tutorial we will show you how to define an application flow using Node Red and how to store the tweets in a SQLDB service.  Then using SQL queries we create a REST API which
+provides the data that we need to render the bar chart in HTML / javascript.
+
 ### The app requires Node-RED boilerplate and SQLDB service from Bluemix.
 A [quick introduction to Node-RED](http://nodered.org) would be handy. Nevertheless, we can pick the skills on the go.
 
@@ -115,9 +122,8 @@ This is the data that is being used to create the UI.  The HTML / javascript tha
 ### Time to see the results. 
 
 * Open a new tab. Log on to **"Your App name".mybluemix.net/bar?q=bush**
-* You can view the Bar graph of the Sentiment Spread of tweets about Jeb Bush. Click on any of the bar and you can view the tweets pertaining to that Sentiment rank.
+* You can view the Bar graph of the Sentiment Spread of tweets about Jeb Bush. Click on any of the bar and you can view a sample of the tweets pertaining to that sentiment score.
 * Try the same with **"Your App name".mybluemix.net/bar?q=clinton**  
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/bar_chart_bush.bmp)
 
 # Within a few minutes, you have created a Sentiment Graph about the Candidates for US elections based on the live Twitter feed!
 
