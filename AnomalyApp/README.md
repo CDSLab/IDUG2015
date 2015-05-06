@@ -94,11 +94,11 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
   ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio.bmp)  
   ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio_2.bmp)
 
-* Open up the node *"Login"* and update the schema with your DashDB username.  
+* Open up the node *"Login"* and update the DashDB username and password selecting *Basic Authentication*.  
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Login_R_REST_Call.bmp)  
   
 
-* Open up the node *"R Script Payload"* and update the DashDB username and password selecting *Basic Authentication*.  
+* Open up the node *"R Script Payload"* and update the schema with your DashDB username.  
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/R_script_payload.bmp)  
 
 
