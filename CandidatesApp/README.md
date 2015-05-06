@@ -19,7 +19,7 @@ provides the data that we need to render the bar chart in HTML / javascript.
 ### The app requires Node-RED boilerplate and SQLDB service from Bluemix.
 A [quick introduction to Node-RED](http://nodered.org) would be handy. Nevertheless, we can pick the skills on the go.
 
-# 3. Lets get started!
+# 3. Let's get started!
 
 ####Set up the Node-RED boilerplate and SQLDB service
 * Login to your Bluemix account.  
@@ -40,13 +40,11 @@ What you see here is the list of your *Applications* and *Services* in Bluemix. 
 * We want to bind the SQLDB service to the App. Lets click on the **ADD A SERVICE OR API** button.
 * Search for SQL Database in the search tab or select the **SQL Database** service in the Data Management section.
 * In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Free plan. Click **CREATE**.   
-* The App would be required to **RESTAGE**. Your SQLDB service is now bound with the Node-RED App and it should show up on the App Overview page.  
-* For authentication purposes for the SQLDB service further on, you would require the username and password at several places. This can found by clicking on the **Show Credentials** text on the left bottom part of the SQL Database block. In the textbox that shows up, make a note of the **username** and **password** among the various attributes. You can always refer back to this whenever required.   
-![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/show_credentials.bmp) 
+* The App will now **RESTAGE**, which should take a minute. When done, your SQLDB service is now bound with the Node-RED App and should show up on the App Overview page.  
 
 ####We are done with the setup of the Node-RED app and the SQLDB service. That was pretty easy.
 
-# 4. Lets create our Node-RED flow!
+# 4. Let's create our Node-RED flow!
 
 #### A little homework on the SQLDB side
 
@@ -100,7 +98,6 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
 Double click on the blue Twitter node "Hillary Clinton" and setup the "Login as" using the icon next to it. You will need to have a Twitter account to authenticate to the Twitter service.
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.bmp)  
 Repeat the same process for the other Twitter node "Jeb Bush".
-
 
 * This imports the ready-to-use flow structure that you can use for this app. On the top right, click **Deploy**.  
 * In the **debug** panel on the right, you would start seeing the live tweets that are going to be saved in the SQLDB tables that we set up before. 
