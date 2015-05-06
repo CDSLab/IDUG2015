@@ -10,6 +10,7 @@ We want to try to figure out the popularity of the Candidates - "Hillary Clinton
 
 Here is a screenshot of the app that you will be making and hosting on the cloud, powered by the SQLDB cloud database:
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/bar_chart_bush.bmp)
+
 Your results will look different, as this is based on live twitter data. You can see that on the particular day when this screenshot was taken, tweets about Jeb Bush were trending negative.
 
 In this tutorial we will show you how to define an application flow using Node Red and how to store the tweets in a SQLDB service.  Then using SQL queries we create a REST API which
