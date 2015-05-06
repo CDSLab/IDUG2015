@@ -70,20 +70,50 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
  and select **Import** > **Clipboard**  
 * In the textbox, paste the content of the file **AnomalyApp_Import_Sheet1.txt** in the folder **node-RED import files** of this project. Click **Ok**  
 
-* This imports the ready-to-use flow structure that you can use for this app. On the top right, click **Deploy**.  
-* In the **debug** panel on the right, you would start seeing the live tweets that are going to be saved in the SQLDB tables that we set up before. 
-* Go back to the SQLDB console and validate the records being inserted into the tables we created.  
-* Now, click the icon on the top right corner of the middle panel to create a new sheet in the flow editor.
-* From the **Import** > **Clipboard** textbox as earlier, import the contents of the file **CandidatesApp_Import_Sheet2.txt**.
+* This imports the ready-to-use flow structure that you can use for this App. 
+
+* Device ID setup (*You can use your cell phone too for more convenience!*) 
+  * Log on to http://www.tinyurl.com/idugiot in a browser. Make note of the Device ID on the top right corner.  
+  
+  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Sensor.bmp)  
+  You can control the temperature and humidity data through the up and down arrow keys.  
+  
+  * Double click the node "Smart Transformer"  
+  Enter the device ID from the browser you opened above **without colons**. Click Ok. 
+  
+  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/%241849374E299CB19B.bmp)  
+  
+  
+
+
+
+
+* **Twilio setup**
+  Sign up on http://www.twilio.com and fetch the Account SID and Auth Token from your account.  
+  Double click the Twilio node and enter the information required.  
+  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio.bmp)  
+  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio_2.bmp)
+
+* Open up the node *"Login"* and update the schema with your DashDB username.  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Login_R_REST_Call.bmp)  
+  
+
+* Open up the node *"R Script Payload"* and update the DashDB username and password selecting *Basic Authentication*.  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/R_script_payload.bmp)  
+
+
+
+On the top right, click **Deploy**.  
+* In the **debug** panel on the right, you would start seeing the temperature and humidity data coming from your phone. 
+* Go back to the DashDB console and validate the records being inserted into the table we created.  
+
 * Click **Deploy**
+
+* The debug console shows the Anomaly Detection output from the R package running on the data captured from your phone. Try to vary the data being sent from your phone so as to create an anomaly in the data and it should be reflected in the output and sent to you as a text message on your phone.
 
 ### We have created the Node-RED flow required for the App. Time to see the results. 
 
-* Open a new tab. Log on to **"Your App name".mybluemix.net/bar?q=bush**
-* You can view the Bar graph of the Sentiment Spread of tweets about Jeb Bush. Click on any of the bar and you can view the tweets pertaining to that Sentiment rank.
-* Try the same with **"Your App name".mybluemix.net/bar?q=clinton**
-
-# Within a few minutes, you have a Sentiment Graph about the Candidates for US elections based on the live Twitter feed!!!
+# Within a few minutes, you have a Data Anomaly Detection App that is able to send alerts to your phone!!!
 
   
  
