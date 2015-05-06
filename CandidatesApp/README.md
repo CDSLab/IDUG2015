@@ -64,10 +64,7 @@ We need to create two tables in our SQL Database for storing the data for our Ap
 	  SENTIMENT DECIMAL(5,2),
 	  TS TIMESTAMP  
 	);
-	```
-* Repeat the above process for another table JEBBUSH.
 
-	``` sql
 	CREATE TABLE JEBBUSH   
 	(
 	  LOCATION VARCHAR(100),
@@ -99,6 +96,9 @@ Double click on the blue Twitter node "Hillary Clinton" and setup the "Login as"
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/edit_twitter_in_node.bmp)  
 Repeat the same process for the other Twitter node "Jeb Bush".
 
+* ####Point the SQLDB nodes to your service.  Since you have created a new SQLDB service and bound it to your application, you need to tell each of the 3 SQLDB nodes in your flow
+the name of the service.  Open each SQLDB node by double clicking and select the service name from the dropdown and click OK.
+
 * This imports the ready-to-use flow structure that you can use for this app. On the top right, click **Deploy**.  
 * In the **debug** panel on the right, you would start seeing the live tweets that are going to be saved in the SQLDB tables that we set up before. 
 * Go back to the SQLDB console and validate the records being inserted into the tables we created.  
@@ -111,7 +111,7 @@ Repeat the same process for the other Twitter node "Jeb Bush".
 Let's take a closer look.  The cool thing here is that we are able to quickly and easily build our application logic for a cloud-driven data application without actually writing much code.
 First let's look at sheet 1.  Each of the twitter nodes (one for each candidate) flow into a sentiment node where a sentiment score is assigned to the tweet based on the positive or negative emotion of the words in the tweet.  Then we format the data (mapping JSON paths in the msg object to columns in a SQL table) and insert into our SQLDB database.  Tweets about Hillary Clinton are stored in the HILLARYCLINTON table along with their sentiment score and some metadata (location, timestamp, screenname), and tweets about Jeb Bush go into the JEBBUSH table.
 
-You might notice at the bottom of the Bush flow that we have some extra logic.  This is an alerting system that sends a notification when a top tweet for the day is received about Jeb Bush.  How does it do this?  Well, there are 2 types of SQLDB nodes that you can work with in Node Red, output nodes (which we used to write to the HILLARYCLINTON and JEBBUSH tables), and query nodes.  After the sentiment analysis is done for Jeb Bush, we fork the flow - one end goes to the database, and the other is fed into the query node.  The query node takes the incoming sentiment score from the flow and compares it against all existing sentiment scores in the database.  It does this with the following SQL query: "select count(*) as bettertweets from jebbush  where sentiment >= ? and days(ts) between days(current_timestamp)-1 and days(current_timestamp)".  This query basically says: give me the count of any tweets existing in the database timestamped today that are better than the one I have coming in (identified with the question mark parameter).  Then the result of that query flows into a filter node which checks if that count is 0 or not.  If the count is not 0, then the flow ends there.  If the count is 0, then you know there are no better tweets and this newly added tweet must be the highest sentiment score of the day.  In such a case, you might want to send an alert as an SMS text message (using the twilio node), or send an email, or even tweet about it -- all of these are options available using nodes in Node Red.  For now, the flow will print to the debug console.  
+You might notice at the bottom of the Bush flow that we have some extra logic.  This is an alerting system that sends a notification when a top tweet for the day is received about Jeb Bush.  How does it do this?  Well, there are 2 types of SQLDB nodes that you can work with in Node Red, output nodes (which we used to write to the HILLARYCLINTON and JEBBUSH tables), and query nodes.  After the sentiment analysis is done for Jeb Bush, we fork the flow - one end goes to the database, and the other is fed into the query node.  The query node takes the incoming sentiment score from the flow and compares it against all existing sentiment scores in the database.  It does this with the following SQL query: "select count(*) as bettertweets from jebbush  where sentiment >= ?".  This query basically says: give me the count of any tweets existing in the database timestamped today that are better than the one I have coming in.  Then the result of that query flows into a filter node which checks if that count is 0 or not.  If the count is not 0, then the flow ends there.  If the count is 0, then you know there are no better tweets and this newly added tweet must be the highest sentiment score of the day.  In such a case, you might want to send an alert as an SMS text message (using the twilio node), or send an email, or even tweet about it -- all of these are options available using nodes in Node Red.  For now, the flow will print to the debug console.  
 
 Next let's inspect sheet 2.  Using the SQLDB query nodes, we implement a simple REST API.  Each REST API has a http intput node on the left feeding into the SQLDB query node, and an http response node on the right.  A get request comes in which triggers a query on the database which is then returned in JSON format as the response.  To see the queries that power the REST API, simply double click on the SQLDB node and you can see the query that is issued against your SQLDB cloud database.  You can see the output of the REST API in JSON format by going to these URL's: http://idugdemo.mybluemix.net/bushspread
 http://idugdemo.mybluemix.net/clintonspread
