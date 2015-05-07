@@ -59,7 +59,7 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 	CREATE TABLE IDUGIOTDEMO   
 	(
 	  TS TIMESTAMP,
-	  HUMIDITY INTEGER,
+	  HUMIDITY INTEGER,  
     TEMP INTEGER	  
 	);
 	```
@@ -122,8 +122,9 @@ On the top right, click **Deploy**.
 * The debug console shows the Anomaly Detection output from the R package running on the data captured from your phone. Try to vary the data being sent from your phone so as to create an anomaly in the data and it should be reflected in the output and sent to you as a text message on your phone.
 
 
-**** Understanding Data and Anomaly Detectiion  
-  AnomalyDetection R package that we are running over our data is suitable for huge chunks of data coming in and the sparse data that we just started to push to our database wouldn't show an anomaly in the data.  
+#### Understanding Data and Anomaly Detectiion  
+  AnomalyDetection R package that we are running over our data is suitable for huge chunks of data coming in and the sparse data that we just started to push to our database wouldn't show an anomaly in the data.   
+   
   If you are curious to see the Anomaly output, you can load the anomaly data from the folder "files" into your DashDB table IDUGIOTDEMO and run the Node-RED flow again.  
 
 
