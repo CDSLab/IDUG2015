@@ -88,7 +88,7 @@ We are done with our work here. Lets jump to the interesting Node-RED part now!
 * On the top right corner, click the icon:
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/%245A2C55CE3129CFC8.bmp)
  and select **Import** > **Clipboard**  
-* In the textbox, paste the content of the file **CandidatesApp_Import_Sheet1.txt** in the folder **node-RED import files** of this project. Click **Ok**  
+* In the textbox, paste the content of the file **CandidatesApp_Import_Sheet1.txt** in the folder **files** of this project. Click **Ok**  
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/node_flow.bmp)
 
 * ####Set the Twitter credentials  

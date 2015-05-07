@@ -60,7 +60,7 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 	(
 	  TS TIMESTAMP,
 	  HUMIDITY INTEGER,  
-    TEMP INTEGER	  
+      TEMP INTEGER	  
 	);
 	```
 * You can see the new table showing up in the left panel. We are done with our work here. Lets jump to the interesting Node-RED part now!	
@@ -75,7 +75,7 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
 * On the top right corner, click the icon:
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/CandidatesApp/images/%245A2C55CE3129CFC8.bmp)
  and select **Import** > **Clipboard**  
-* In the textbox, paste the content of the file **AnomalyAppImport.txt** in the folder **node-RED import files** of this project. Click **Ok**  
+* In the textbox, paste the content of the file **AnomalyAppImport.txt** in the folder **files** of this project. Click **Ok**  
 
 * This imports the ready-to-use flow structure that you can use for this App. 
 
@@ -124,10 +124,11 @@ On the top right, click **Deploy**.
 
 #### Understanding Data and Anomaly Detectiion  
   AnomalyDetection R package that we are running over our data is suitable for huge chunks of data coming in and the sparse data that we just started to push to our database wouldn't show an anomaly in the data.   
-   
-  If you are curious to see the Anomaly output, you can load the anomaly data from the folder "files" into your DashDB table IDUGIOTDEMO and run the Node-RED flow again.  
 
+  If you are curious to see the Anomaly output, you can load the AnomalyData.csv from the folder "files" into your DashDB table IDUGIOTDEMO and run the Node-RED flow again.  
 
+This is a Sample Output in the debug console of Node-RED  
+![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/sampleOutput.bmp)  
 
 ### We have created the Node-RED flow required for the App. Time to see the results. 
 
