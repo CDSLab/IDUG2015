@@ -99,7 +99,11 @@ We need to create a table in our DashDB for storing the data for our App. Lets g
   Sign up on http://www.twilio.com and fetch the Account SID and Auth Token from your account.  
   Double click the Twilio node and enter the information required.  
   ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio.bmp)  
-  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio_2.bmp)
+  Put in your cell number in the textbox "SMS to".  
+
+
+  ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/Add_Twilio_2.bmp)  
+  Put in your Twilio number in the "From" textbox.
 
 * Open up the node *"Login"*  
   * Update the DashDB username and password selecting *Basic Authentication*.
