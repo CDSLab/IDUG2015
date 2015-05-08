@@ -15,7 +15,7 @@ A [quick introduction to Node-RED](http://nodered.org) would be handy. Neverthel
 
 ####Set up the Node-RED boilerplate and DashDB service
 * Login to your Bluemix account.  
-What you see here is the list of your *Applications* and *Services* in Bluemix. We are going to create a Node-RED boilerplate application and *bind* a SQLDB service to this application.  
+What you see here is the list of your *Applications* and *Services* in Bluemix. We are going to create a Node-RED boilerplate application and *bind* a DashDB service to this application.  
   
 *Now, a Boilerplate can be imagined as a bundled Application with relevant bound Services for a particular targeted usage to get up and running quickly.*  
 * In the upper menu bar, go to **CATALOG**  
@@ -38,7 +38,7 @@ Click *"SAVE"*. Application will be restrted.
 * Search for DashDB in the search tab or select the **dashDB** service in the Big Data section.
 * In the right hand side panel, the App name would be pre-filled and the service name would be randomly generated. The selected plan should be defaulted to Entry plan. Click **CREATE**.   
 * The App would be required to **RESTAGE**. Your DashDB service is now bound with the Node-RED App and it should show up on the App Overview page.  
-* For authentication purposes for the DashDB service further on, you would require the username and password at several places. This can found by clicking on the **Show Credentials** text on the left bottom part of the SQL Database block. In the textbox that shows up, make a note of the **username** and **password** among the various attributes. You can always refer back to this whenever required.
+* For authentication purposes for the DashDB service further on, you would require the username and password at several places. This can found by clicking on the **Show Credentials** text on the left bottom part of the DashDB block. In the textbox that shows up, make a note of the **username** and **password** among the various attributes. You can always refer back to this whenever required.
 
 ![alt text](https://raw.githubusercontent.com/CDSLab/IDUG2015/master/AnomalyApp/images/showcredentials.bmp)  
 
@@ -50,7 +50,7 @@ Click *"SAVE"*. Application will be restrted.
 
 We need to create a table in our DashDB for storing the data for our App. Lets get that done quickly.
 
-* On the overview page, click on the DashDB service block in the services section. Further, click on the **LAUNCH** button on the upper right corner of the page. This will open up the SQLDB console in a new tab.  
+* On the overview page, click on the DashDB service block in the services section. Further, click on the **LAUNCH** button on the upper right corner of the page. This will open up the DashDB console in a new tab.  
 * Click on **Tables** on the left panel.  
 * In the schema and table name panel, click on the small little circular **+** symbol. This will enable you to create a new table.  
 * In the right side textbox paste the following DDL statement and click **Run DDL**
